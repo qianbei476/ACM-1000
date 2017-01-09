@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static int num = 0;
+	public static int p = 14;
+	public static void result(int x,int p){
+		if(p>0){
+		if(x/Math.pow(2, p)>0){
+		num++;
+		p--;
+		result((int) (x-Math.pow(2, p)),p);
+		}
+		else if(x/Math.pow(2,p)==0){
+		p--;
+		result(x,p);
+		}
+	}
+}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int N = cin.nextInt();
+				while(N>0){
+					num = 0;
+					p = 14;
+					int M = cin.nextInt();
+					result(M,p);
+					System.out.println(num);
+					N--;
+				}
+		}	 
+} 
