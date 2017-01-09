@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				ArrayList<Integer> arr = new ArrayList<Integer>();
+				arr.add(cin.nextInt());
+				arr.add(cin.nextInt());
+				arr.add(cin.nextInt());
+				Collections.sort(arr);
+				for(Integer i:arr){
+					System.out.print(i+" ");
+				}
+				
+	}	
+}
