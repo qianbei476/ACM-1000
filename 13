@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws Exception{
+		int size = 20,temp=2;
+		int f[] = new int[size];
+		f[0]=f[1]=1;
+		while(temp<20){
+			f[temp] = f[temp-1]+f[temp-2];
+			temp++;
+		}
+		Scanner cin = new Scanner(System.in);
+		int arrsize = cin.nextInt();
+		int arr[] = new int[arrsize];
+		for(int i=0;i<arrsize;i++){
+			arr[i]=cin.nextInt();
+		}
+		for(int i=0;i<arrsize;i++){
+			System.out.println(f[arr[i]-1]);
+		}
+	}
+}
