@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void IsFlower(int x){
+		
+		if((int) (Math.pow(x%10,3)+Math.pow((x/10)%10,3)+Math.pow((x/100)%10,3)) == x)
+			System.out.println("Yes");
+		else
+			System.out.println("No");
+	}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				while(cin.hasNext()){
+					int n = cin.nextInt();
+					if(n==0)
+						break;
+					else if(n>=100 && n<1000){
+						IsFlower(n);
+					}
+				}
+	}	 
+}
