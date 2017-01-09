@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static void SetLine(char ch[]){
+		char temp;
+		for(int i=0;i<ch.length;i++)
+			for(int j=i;j<ch.length;j++){
+				if(ch[i]>=ch[j]){
+					temp = ch[i];
+					ch[i] = ch[j];
+					ch[j] = temp;
+				}
+			}
+		String str = String.valueOf(ch);
+		String regex = "(.{1})";
+		System.out.println(str.replaceAll(regex, "$1 "));
+	}
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		while(cin.hasNext()){
+			int size = cin.nextInt();
+			String[] arr = new String[size];
+			for(int i=0;i<size;i++){
+				arr[i] = cin.next();
+			}
+			for(int i=0;i<size;i++){
+				SetLine(arr[i].toCharArray());
+			}
+		}
+	}
+}
