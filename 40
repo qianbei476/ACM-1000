@@ -1,0 +1,26 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+public class Main {
+	/**
+	 *输入
+		第一行输入一个整数n（0<n<=10000)，表示有n组测试数据;
+		随后的n行输入两个整数i,j（0<i,j<=32767)。
+	    输出
+		输出每组测试数据的最大公约数和最小公倍数
+	 */
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int size = cin.nextInt();
+		while(size>0){
+				 int a=cin.nextInt(),b = cin.nextInt();
+				 if(a>0&&a<=32767&&b>0&&b<=32767){					 
+					for(int j=a>b?b:a;j>0;j--){
+					 if(a%j==0&&b%j==0){		 
+						 System.out.println(j+" "+(a*b/j));
+						 break;
+					 }
+				 }
+			}
+				 size--;}
+		}
+}
