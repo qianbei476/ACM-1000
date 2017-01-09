@@ -1,0 +1,32 @@
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		List<String> result = new ArrayList<String>();
+		int temp = 10;
+		while(cin.hasNext()&&temp>0){
+			BigInteger a = new BigInteger(cin.next());
+			BigInteger b = new BigInteger(cin.next());
+			BigInteger zero = new BigInteger("0");
+			if(a.compareTo(b)<0){
+				result.add("a<b");
+			}
+			else if(a.compareTo(b)>0){
+				result.add("a>b");
+			}
+			else if(a.compareTo(b)==0&&a.compareTo(zero)!=0){
+				result.add("a==b");
+			}
+			else if(a.compareTo(zero)==0&&a.compareTo(b)==0){
+				break;
+			}
+			temp--;
+		}
+		for(int i=0;i<result.size();i++){
+			System.out.println(result.get(i));
+		}
+	}
+}
