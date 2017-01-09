@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int t = cin.nextInt();	
+				ArrayList<Integer> visitor,flowers,result = null;
+				result = new ArrayList<Integer>();
+				while(t>0){
+				int n = cin.nextInt();		
+				int m = cin.nextInt();		
+					flowers = new ArrayList<Integer>();
+				for(int i=0;i<n;i++){
+					flowers.add(cin.nextInt());
+					flowers.add(cin.nextInt());
+				}
+					visitor = new ArrayList<Integer>();
+				for(int i=0;i<m;i++){
+					visitor.add(cin.nextInt());
+				}
+				for(Integer i:visitor){
+					int temp = 0;
+					for(int j=0;j<=n;j=j+2){
+						if(i>=flowers.get(j) && i<=flowers.get(j+1))
+							temp++;
+					}	
+					result.add(temp);
+				}	
+				t--;
+				flowers = null;
+				visitor = null;			
+		}		
+				for(Integer i:result){
+					System.out.println(i);
+			}	
+	}	
+}
+
