@@ -24,3 +24,32 @@ public class Main {
 				 size--;}
 		}
 }
+moon
+---------------------------------------------------------------------------------------
+lucky
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+
+public class Main {
+	public static int Result(int x,int y){
+		while(x%y!=0){
+			int temp = x%y;
+			x = y;
+			y = temp;
+		}
+		return y;
+	}
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		while(n>0 && n<=10000){
+			int i = cin.nextInt(),j = cin.nextInt();
+			if(i<0||i>32767||j<0||j>32767){
+				System.exit(0);
+			}
+				System.out.println(Result(Math.max(i, j),Math.min(i, j))+" "+(i*j)/Result(i, j));
+			
+			n--;
+		}
+	}
+}
