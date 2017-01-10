@@ -2,46 +2,29 @@ import java.io.BufferedInputStream;
 import java.util.*;
 
 public class Main {
-	public static int result(int x,int y,int arr[],ArrayList<Integer> primerList){
-		int sum = 0;
-		for(int i=x;i<=y;i++){
-			for(int j:primerList){
-				if(i==j)
-					sum+=i;
+	
+	public static boolean IsPrimer(int x){
+			for(int i=2;i<x;i++){
+				if(x%i==0)
+					return false;
 			}
-		}
-		return sum;
+		return true;
 	}
+	
 	public static void main(String[] args) {
 				Scanner cin = new Scanner(new BufferedInputStream(System.in));
-				int M = cin.nextInt();
-				ArrayList<Integer> primerList = new ArrayList<Integer>();
-				for(int i=2;i<=1000;i++){
-					if(i>=2){
-						int flag = 0;
-						for(int j=2;j<i;j++){
-						if(i%j==0)		flag++;
-						}
-						if(flag==0) 	primerList.add(i);	
-						}
-				}
+				int M = cin.nextInt();					
 				while(M>0&&M<10){
+					int sum = 0;
 					int N = cin.nextInt();
-					if(N>0&&N<1000){
-					int[] arr = new int[N];
-					for(int i=0;i<N;i++){
+					while(N>0&&N<1000){
 						int m = cin.nextInt();
-						if(m>0&&m<1000)
-						arr[i] = m;
-					}
-					Arrays.sort(arr);
-					System.out.println(result(arr[0], arr[arr.length-1], arr,primerList));
+						if(m>1 && m<1000 && IsPrimer(m))
+							sum+=m;
+						N--;
+						}
+					System.out.println(sum);
 					M--;
-					}
+					}		
 			  }
 		}	 
-} 
-
-
-
-
