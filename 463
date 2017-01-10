@@ -1,0 +1,26 @@
+import java.io.BufferedInputStream;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int N = cin.nextInt();
+				ArrayList<String> arr = new ArrayList<String>();
+				String str = "";
+				for(int i=1;i<=9;i++){
+					for(int j=i;j<=9;j++)
+						str += (i+"*"+j+"="+i*j+" ");
+					arr.add(str);
+					str = "";
+				}
+				while(N<10&&N>0){
+					int M = cin.nextInt();
+					if(M>0&&M<10){
+						for(int i=0;i<M;i++)
+							System.out.println(arr.get(i));
+					}
+					N--;
+				}
+		}
+}	 
