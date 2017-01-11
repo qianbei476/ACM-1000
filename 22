@@ -1,30 +1,31 @@
-import java.io.BufferedInputStream;
+import java.io.*;
 import java.util.*;
 
 public class Main {
 	
 	public static boolean IsPrimer(int x){
-			for(int i=2;i<x;i++){
-				if(x%i==0)
-					return false;
-			}
+		if(x<2)
+			return false;
+		for(int i=2;i<x;i++)
+			if(x%i==0){
+				return false;}
 		return true;
 	}
 	
 	public static void main(String[] args) {
-				Scanner cin = new Scanner(new BufferedInputStream(System.in));
-				int M = cin.nextInt();					
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				int M = cin.nextInt();
 				while(M>0&&M<10){
-					int sum = 0;
 					int N = cin.nextInt();
+					int sum = 0;
 					while(N>0&&N<1000){
-						int m = cin.nextInt();
-						if(m>1 && m<1000 && IsPrimer(m))
-							sum+=m;
+						int num = cin.nextInt();
+						if(IsPrimer(num)&&num<1000)
+							sum+=num;
 						N--;
-						}
+					}
 					System.out.println(sum);
 					M--;
-					}		
-			  }
-		}	 
+				}
+	}	 
+}
