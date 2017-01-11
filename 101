@@ -1,0 +1,17 @@
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				DecimalFormat df = new DecimalFormat("######0.00");
+				int n = cin.nextInt();
+				while(n>0&&n<=1000){
+					double x1 = cin.nextDouble(),y1 = cin.nextDouble();
+					double x2 = cin.nextDouble(),y2 = cin.nextDouble();	
+					System.out.println(df.format(Math.sqrt(Math.pow((x2-x1), 2)+Math.pow(y2-y1, 2))));
+					n--;
+				}
+	}	 
+}
