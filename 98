@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				
+				int N = cin.nextInt();
+				while(N>0&&N<10){
+					int M = cin.nextInt();
+					switch(M/10){
+					case 10:System.out.println("A");break;
+					case 9:System.out.println("A");break;
+					case 8:System.out.println("B");break;
+					case 7:System.out.println("C");break;
+					case 6:System.out.println("D");break;
+						default:System.out.println("E");
+					}
+					N--;
+				}
+	}	 
+}
