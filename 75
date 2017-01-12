@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static boolean IsR(double x){
+		boolean R = false;
+		if(x%100==x/100){		//世纪年
+			if(x%400==0)
+				R = true;
+		}else if(x%4==0){
+				R = true;
+		}
+		return R;
+	}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));				
+				int[] year_r = {31,29,31,30,31,30,31,31,30,31,30,31};
+				int[] year_p = {31,28,31,30,31,30,31,31,30,31,30,31};
+				int N = cin.nextInt();
+				while(N>0&&N<=100){
+					double year = cin.nextInt();
+					int month = cin.nextInt(),day = cin.nextInt();
+					int sum = 0;
+					if(year>0&&month>0&&day>0&&month<=12){
+						if(IsR(year)&&day<=year_r[month-1]){		
+							for(int i=0;i<month-1;i++){
+								sum+=year_r[i];
+							}
+						}
+						else if(!IsR(year)&&day<=year_r[month-1]){
+							for(int i=0;i<month-1;i++){
+								sum+=year_p[i];
+							}
+						}
+						System.out.println(sum+day);
+					}				
+					N--;
+				}
+	}	 
+}
