@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static boolean IsDigit(String str){
+		boolean T = false;
+		for(int i=0;i<str.length();i++){
+			if(!Character.isDigit(str.charAt(i))){
+				if(str.charAt(i)=='.'){
+					T = true;
+				}else{
+					T = false;
+				}
+				
+			}else{
+				T = true;
+			}
+		}
+		return T;
+}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				int N = cin.nextInt();
+				while(N>0&&N<10){
+					String str = cin.next();
+					if(IsDigit(str)&&str.length()<=20){
+						char[] in = str.toCharArray();
+						for(char i:in)
+						System.out.print(i);
+					}
+					N--;
+				}
+	}	 
+}
