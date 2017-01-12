@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));				
+				int N = cin.nextInt();
+				while(N>0&&N<10){
+					double n = cin.nextDouble();
+					double m = cin.nextDouble();
+					if(n>0&&n<100&m>0&&m<100){
+						double y = m/2-n;
+						double x = n-y;
+						if(x>=0&&y>=0&&m%2==0)
+							System.out.println((int)x+" "+(int)y);
+						else {
+							System.out.println("No answer");
+						}
+					}
+					N--;
+				}
+	}	 
+}
