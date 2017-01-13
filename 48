@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				ArrayList<Integer> arr,arr2;
+				while(cin.hasNext()){
+					int n = cin.nextInt();
+					arr = new ArrayList<Integer>();
+					arr2 = new ArrayList<Integer>();
+					for(int i=0;i<n;i++){
+						arr.add(cin.nextInt());
+					}
+					Collections.sort(arr);
+					for(int i:arr){
+							if(!arr2.contains(i))
+								arr2.add(i);
+						}
+					
+					System.out.println(arr2.size());
+					for(int i:arr2)
+						System.out.print(i+" ");
+					}
+				}
+}
+Lucky
+--------------------------------------------------------------------------------------
+Moon
+import java.io.BufferedInputStream;
+import java.util.*;
+ 
+public class Main {
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int a=cin.nextInt();
+			if(a>0){
+				int []b=new int[a];   
+				for(int i=0;i<a;i++){
+					int x=cin.nextInt();
+					b[i]=x;
+				}   
+				Arrays.sort(b);        
+				List<Integer> list=new ArrayList<Integer>();
+				for(int j=0;j<a;j++){
+					if(list.indexOf(b[j])==-1){
+						list.add(b[j]);
+					} 
+				}
+				System.out.println(list.size());
+				for(int i=0;i<list.size();i++){
+					System.out.print(list.get(i)+" ");
+				}     
+				System.out.println();
+			}
+	}
+}
