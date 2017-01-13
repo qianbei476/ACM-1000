@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				int N = cin.nextInt();
+				while(N>0&&N<100){
+					int desk = 30;
+					int get = 0;
+					ArrayList<Integer> tree = new ArrayList<Integer>();
+					for(int i=0;i<10;i++){
+						int temp = cin.nextInt();
+						tree.add(temp);
+					}
+					int height = cin.nextInt();
+					for(int i:tree){
+						if((desk+height)>=i)
+							get++;
+					}
+					N--;
+					System.out.println(get);
+				}
+	}	 
+}
