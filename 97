@@ -1,0 +1,22 @@
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				int T = cin.nextInt();
+				double m,x,y,z;
+				double S = 0;
+				while(T-- >0){
+					m = cin.nextDouble();
+					x = cin.nextDouble();
+					y = cin.nextDouble();
+					z = cin.nextDouble();
+					S = m*z*x/(y-x);		
+					DecimalFormat df = new DecimalFormat("#####0.00");
+					System.out.println(df.format(S));
+				}
+	}	 
+}
