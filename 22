@@ -4,28 +4,31 @@ import java.util.*;
 public class Main {
 	
 	public static boolean IsPrimer(int x){
-		if(x<2)
-			return false;
-		for(int i=2;i<x;i++)
-			if(x%i==0){
-				return false;}
-		return true;
+		boolean Primer = true;
+		if(x==1||x==0)
+			Primer = false;
+		for(int i=2;i<x;i++){
+			if(x%i==0)
+				Primer = false;
+		}
+		return Primer;
 	}
 	
 	public static void main(String[] args) {
 				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
-				int M = cin.nextInt();
-				while(M>0&&M<10){
-					int N = cin.nextInt();
+				int N = cin.nextInt();
+				while(N>0){
+					int num = cin.nextInt();
 					int sum = 0;
-					while(N>0&&N<1000){
-						int num = cin.nextInt();
-						if(IsPrimer(num)&&num<1000)
-							sum+=num;
-						N--;
+					int[] m = new int[num];
+					for(int i=0;i<num;i++)
+						m[i] = cin.nextInt();
+					for(int i:m){
+						if(IsPrimer(i))
+							sum = sum+i;
 					}
 					System.out.println(sum);
-					M--;
+					N--;
 				}
 	}	 
 }
