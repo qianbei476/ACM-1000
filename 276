@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));	
+				int T = cin.nextInt();
+				while(T>0){
+					String x = cin.next();
+					String y = cin.next();
+					if((int)x.charAt(0)>(int)y.charAt(0)){
+						System.out.println(x+"<"+y);
+					}
+					else if((int)x.charAt(0)<(int)y.charAt(0)){
+						System.out.println(x+">"+y);
+					}
+					else{
+						System.out.println(x+"="+y);
+					}
+					T--;
+				}
+	}	 
+}
