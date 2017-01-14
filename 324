@@ -1,0 +1,24 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		while(n-->0){
+			int num = 1;
+			int m = cin.nextInt();
+			for(int i=1;i<=m;i++){
+				num = (num+1)*2;
+			}
+			System.out.println(num);
+		}
+	}
+
+}
