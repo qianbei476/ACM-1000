@@ -1,0 +1,43 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static boolean IsPrimer(int x){
+		if(x<=1)
+			return false;
+		if(x==2)
+			return true;
+		if(x%2==0||x==1)
+			return false;
+		for(int i=3;i<=Math.sqrt(x);i++)
+			if(x%i==0)
+				return false;
+		return true;
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		while(n-->0){
+			int num = cin.nextInt();
+			int T = -1;
+			int N = 1;
+			if(IsPrimer(num))
+				System.out.println(num+" "+0);
+			else{
+				while(!IsPrimer(num)){
+					num = num+T*N;
+					N++;
+					T = -T;
+				}
+				System.out.println(num+" "+N/2);
+			}
+			
+		}
+	}
+}
