@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int N = cin.nextInt();
+				String name = "";
+				int f_score = 0;
+				int c_score = 0;
+				String stu = "";
+				String west = "";
+				int article = 0;
+				while(N-->0){
+					int X = cin.nextInt();
+					String f_stu = "";
+					int sum_stu = 0;
+					int Sum = 0;
+					for(int i=0;i<X;i++){
+						int temp = 0;
+						name = cin.next();
+						f_score = cin.nextInt();
+						c_score = cin.nextInt();
+						stu = cin.next();
+						west = cin.next();
+						article = cin.nextInt();
+						if(f_score>80&&article>=1)
+							temp+=8000;
+						if(f_score>85&&c_score>80)
+							temp+=4000;
+						if(f_score>90)
+							temp+=2000;
+						if(c_score>80&&stu.equals("Y"))
+							temp+=850;
+						if(f_score>85&&west.equals("Y"))
+							temp+=1000;
+							
+						Sum+=temp;
+						if(temp>sum_stu){
+							sum_stu = temp;
+							f_stu = name;
+						}
+					}
+					System.out.println(f_stu+"\n"+sum_stu+"\n"+Sum);
+					
+				}
+		}
+}
