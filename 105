@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int n = cin.nextInt();
+				while(n-->0){
+					String str = cin.next();
+					int sum = 0;
+						for(int i=0;i<str.length();i++){
+							sum+=Integer.parseInt(String.valueOf(str.charAt(i)));
+					}
+						System.out.println(sum%9);
+				}
+		}
+}
