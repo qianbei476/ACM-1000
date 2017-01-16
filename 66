@@ -1,0 +1,33 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
+
+
+public class Main {
+//	分数拆分
+//	时间限制：3000 ms  |  内存限制：65535 KB 
+//	难度：1
+//
+//	描述 
+//	现在输入一个正整数k,找到所有的正整数x>=y,使得1/k=1/x+1/y.
+//
+//	输入
+//	第一行输入一个整数n,代表有n组测试数据。
+//	接下来n行每行输入一个正整数k
+//	输出
+//	按顺序输出对应每行的k找到所有满足条件1/k=1/x+1/y的组合
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		while(n-->0){
+			int k = cin.nextInt();
+			for(int i=(k+1);i<=2*k;i++)//y
+			{
+				if((i*k)%(i-k)==0)
+					System.out.println("1/"+k+"=1/"+(i*k)/(i-k)+"+1/"+i);
+			}
+				
+			
+		}
+	}
+}
