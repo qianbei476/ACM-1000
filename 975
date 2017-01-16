@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int arr1[] = new int[1000000];
+				int arr2[] = new int[1000000];
+				int temp1 = 0,temp2 = 0;
+				for(int i=1;i<1000000;i++){
+					if(String.valueOf(i).contains("521"))
+						temp1++;
+					arr1[i] = temp1;
+					
+					if(String.valueOf(i).contains("5")&&String.valueOf(i).contains("2")&&String.valueOf(i).contains("1"))
+						temp2++;
+					arr2[i] = temp2;
+				}
+				int i = 0;
+				while(cin.hasNext()){
+					int m = cin.nextInt();
+					int n = cin.nextInt();
+					if(n-m>=1)
+					System.out.println("Case "+(++i)+":"+(arr2[n]-arr2[m])+" "+(arr1[n]-arr1[m]));
+					else {
+						System.out.println("Case "+(++i)+":0 0");
+					}
+				}
+		}
+}
