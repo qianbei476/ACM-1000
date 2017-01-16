@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static boolean IsPrimer(int x){
+		if(x<=1)
+			return false;
+		if(x==2)
+			return true;
+		if(x>2){
+			for(int i=2;i<=Math.sqrt(x);i++)
+				if(x%i==0)
+					return false;
+		}
+		return true;
+	}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int n = cin.nextInt();
+				while(n-->0){
+					String str = cin.next();
+					int Max = 0;
+					int Min = str.length();
+					int temp;
+					for(int i=0;i<str.length();i++){
+						temp=0;
+						for(int j=0;j<str.length();j++){
+							if(str.charAt(i)==str.charAt(j))
+								temp++;	
+						}
+						if(temp>=Max)
+							Max = temp;
+						if(temp<=Min)
+							Min = temp;
+						if(temp==str.length())
+							Min = Max;
+					}
+					if(IsPrimer(Max-Min)){
+						System.out.println("Lucky Word\n"+(Max-Min));
+					}else{
+						System.out.println("No Answer\n"+0);
+					}
+				}
+		}
+}
