@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static int Max(int arr[]){
+		return arr[3]*1000+arr[2]*100+arr[1]*10+arr[0];
+	}
+	public static int Min(int arr[]){
+		return arr[0]*1000+arr[1]*100+arr[2]*10+arr[3];
+	}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int n = cin.nextInt();
+				int a,b,c,d;
+				while(n-->0){
+					int num = cin.nextInt();
+					int N = 1;
+					while(num!=6174){
+						a = num%10;
+						b = (num/10)%10;
+						c = (num/100)%10;
+						d = (num/1000)%10;
+						int arr[] = {a,b,c,d};
+						Arrays.sort(arr);
+						num = Max(arr)-Min(arr);
+						N++;
+					}
+					System.out.println(N);
+				}
+		}
+}
