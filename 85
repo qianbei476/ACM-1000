@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+	public static int getN(int x){
+		if(x==1)
+			return 1;
+		else
+		return getN(x-1)+x;
+	}
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int N = cin.nextInt();
+				ArrayList<String> arr = new ArrayList<String>();
+				for(int i=1;i<=447;i++){
+					if(i%2==0){
+						for(int j=1;j<=i;j++){			
+							arr.add(j+"/"+(i+1-j));
+					}
+					}else{
+						for(int j=1;j<=i;j++){			
+							arr.add((i+1-j)+"/"+j);
+					}
+					}
+				}
+				while(N-->0){
+					int n = cin.nextInt();
+					System.out.println(arr.get(n-1));
+				}
+				
+		}
+}
