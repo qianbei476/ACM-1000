@@ -1,0 +1,20 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+public static void main(String[] args) {
+		
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+			while(cin.hasNext()){
+				int x = cin.nextInt();
+				int y = cin.nextInt();
+				if(x*y>0)
+					System.out.println("Signs are not opposot");
+				else if(x*y<0)
+					System.out.println("Signs are opposite");
+				else
+					System.out.println("Signs can't be sure");	
+			}
+		}
+}
