@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+public static void main(String[] args) {
+		
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();	
+		while(n-->0){
+			int day = 0;
+			int H = cin.nextInt();
+				while(true){
+					day++;
+					if(H-10<=0)
+						break;
+					H -=5;
+				}
+				System.out.println(day);
+			}
+				
+		}
+}
