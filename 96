@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+				Scanner cin = new Scanner(new BufferedInputStream(System.in));
+				int  M = cin.nextInt();
+				while(M-->0){
+					String str = cin.next();
+					str = str.substring(1,str.length());
+					System.out.println(Integer.parseInt(str));
+					
+				}
+		}
+}
