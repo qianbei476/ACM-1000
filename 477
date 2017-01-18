@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+public static void main(String[] args) {
+		
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();	
+		while(n-->0){
+				double a = cin.nextDouble();
+				double b = cin.nextDouble();
+				double c = cin.nextDouble();
+				if(((a+b)-c)<=0.0001&&((a+b)-c)>=(-0.0001))
+					System.out.println("Yes");
+				else{
+					System.out.println("No");
+					}
+				}
+		}
+}
