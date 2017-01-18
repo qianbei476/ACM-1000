@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();	
+		while(n-->0){
+			long m = cin.nextLong();
+			System.out.println((m-1)*1000+471);
+		}
+	}
+}
