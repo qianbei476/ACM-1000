@@ -1,0 +1,67 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		int[] arr;
+		while(n-->0){
+			int m = cin.nextInt();
+			arr = new int[m*3];
+			for(int i=0;i<3*m;i++)
+				arr[i] = cin.nextInt();
+			for(int i=0;i<3*m-3;i+=3){
+				if(arr[i]==arr[i+3]&&
+						Math.max(arr[i+1], arr[i+2])==Math.max(arr[i+4], arr[i+5])&&
+								Math.min(arr[i+1], arr[i+2])==Math.min(arr[i+4],arr[i+5])){
+					arr[i]=arr[i+1]=arr[i+2]=0;
+				}
+			}
+			int temp1=0,temp2=0,temp3 = 0;
+			for(int i=0;i<3*m;i+=3){
+				for(int j=0;j<3*m;j+=3){
+					if(arr[i]<arr[j]){
+						temp1 = arr[j];
+						temp2 = arr[j+1];
+						temp3 = arr[j+2];
+						arr[j] = arr[i];
+						arr[j+1] = arr[i+1];
+						arr[j+2] = arr[i+2];
+						arr[i] = temp1;
+						arr[i+1] = temp2;
+						arr[i+2] = temp3;
+					}
+					if(arr[i]==arr[j]&&Math.max(arr[i+1],arr[i+2])<Math.max(arr[j+1], arr[j+2])){
+						temp1 = arr[j];
+						temp2 = arr[j+1];
+						temp3 = arr[j+2];
+						arr[j] = arr[i];
+						arr[j+1] = arr[i+1];
+						arr[j+2] = arr[i+2];
+						arr[i] = temp1;
+						arr[i+1] = temp2;
+						arr[i+2] = temp3;
+					}
+					if(arr[i]==arr[j]&&Math.max(arr[i+1],arr[i+2])==Math.max(arr[j+1], arr[j+2])&&
+							Math.min(arr[i+1],arr[i+2])<Math.min(arr[j+1],arr[j+2])){
+						temp1 = arr[j];
+						temp2 = arr[j+1];
+						temp3 = arr[j+2];
+						arr[j] = arr[i];
+						arr[j+1] = arr[i+1];
+						arr[j+2] = arr[i+2];
+						arr[i] = temp1;
+						arr[i+1] = temp2;
+						arr[i+2] = temp3;
+					}
+				}
+			}
+			for(int i=0;i<3*m;i+=3){
+				if(arr[i]!=0)
+					System.out.println(arr[i]+" "+arr[i+1]+" "+arr[i+2]);
+			}
+		}
+	}
+}
