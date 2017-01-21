@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static int GetBack(int x,int y){
+		int sum = 0;
+		while(x%y==0){
+			sum++;
+			x = x/y;
+		}
+		return sum;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner cin = new Scanner(System.in);
+		int N = cin.nextInt();
+		int sum;
+		while(N-->0){
+			int n = cin.nextInt();
+			int m = cin.nextInt();
+			sum = 0;	
+			for(int i=n;i>=1;i--){
+				if(i%m==0)
+				sum+=GetBack(i,m);
+			}
+			System.out.println(sum);
+		}
+	}
+
+}
