@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+
+	/**
+	 * @param args
+	 * z 为每次剩下的烟头
+	 */
+	public static int GetBack(int x,int z,int y,int sum){
+		sum+=x;
+		z = (x+z);
+		if(z>=y){
+			return GetBack(z/y,z%y,y,sum);
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner cin = new Scanner(System.in);
+		int N = cin.nextInt();
+		int sum;
+		while(N-->0){
+			sum = 0;
+			int n = cin.nextInt();
+			int k = cin.nextInt();
+			System.out.println(GetBack(n,0,k,sum));
+		}
+	}
+
+}
