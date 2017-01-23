@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int T = cin.nextInt();
+		while(T-->0){
+			int num = cin.nextInt();
+			int max_a = 0,max_thin = 0,max_num = 0;
+			for(int i=0;i<num;i++){
+			int a = cin.nextInt();
+			int b = cin.nextInt();
+			int c = cin.nextInt();	
+			if(a>max_a){
+				max_a = a;
+				max_thin = b;
+				max_num = c;
+			}				
+			if(a == max_a){
+				if(b<max_thin){
+					max_thin = b;
+					max_num = c;
+				}
+				if(b == max_thin){
+					if(c>max_num){
+						max_num = c;
+					}
+				}
+			}
+			}
+			System.out.println(max_num);
+		}	
+	}
+}
