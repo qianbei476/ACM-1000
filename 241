@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int T = cin.nextInt();
+		while(T-->0){
+			String str = cin.next();
+			int max = 0;
+			int temp;
+			char res = 'z';
+			for(int i=0;i<str.length();i++){
+				temp = 0;
+				for(int j=0;j<str.length();j++)
+				if(str.charAt(i)==str.charAt(j)){
+					temp++;
+				}
+				if(temp>max){
+					max = temp;
+					res = str.charAt(i);
+				}
+				if(temp==max&&res>str.charAt(i)){
+					res = str.charAt(i);
+				}
+			}
+			System.out.println(res);
+		}	
+	}
+}
