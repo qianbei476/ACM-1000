@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int[] a = new int[100];
+		while(cin.hasNext()){
+			int n = cin.nextInt();
+			if(n==0)
+				System.out.println(0);
+			else{
+			int i=0,j=0;
+			for(i = n;i>0;i/=2){
+				a[j++] = i%2;
+			}
+			for(i=j-1;i>=0;i--)
+				System.out.print(a[i]);
+			System.out.println("");}
+		}
+		
+	}
+}
