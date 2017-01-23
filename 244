@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int T = cin.nextInt();
+		int c;
+		while(T-->0){
+			String str = cin.next();
+			int a = Integer.parseInt(str.split("\\+|\\-")[0],16);
+			int b = Integer.parseInt(str.split("\\+|\\-")[1],16);
+			
+			if(str.contains("+")){
+				c = a+b;
+			}else{
+				c = a-b;
+			}
+			System.out.println(Integer.toOctalString(c));
+		}	
+	}
+}
