@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main3 {
+
+	
+	public static int Max(int x,int y,int z){
+		return Math.max(x,Math.max(y, z));
+	}
+	public static int Min(int x,int y,int z){
+		return Math.min(x, Math.min(y, z));
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner cin=new Scanner(System.in);
+        int[] arr;
+        while(cin.hasNext()){
+        	int n = cin.nextInt();
+        	arr = new int[n];
+        	for(int i=0;i<n;i++){
+        		arr[i] = cin.nextInt();
+        	}
+        		int max_j=0;
+        		int temp_j;
+        		for(int i=1;i*3<=n;i++){
+        			if(i%2==1){
+        				temp_j = Max(arr[3*i-3],arr[3*i-2],arr[3*i-1]);
+        			}else{
+        				temp_j = Min(arr[3*i-3],arr[3*i-2],arr[3*i-1]);
+        			}
+        			max_j = Math.max(max_j,temp_j);
+        		}
+        		System.out.println(max_j);
+        }
+	}
+
+}
