@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int T = cin.nextInt();
+		ArrayList<Integer> arr1,arr2;
+		while(T-->0){
+			int n = cin.nextInt();
+			arr1 = new ArrayList<Integer>();
+			arr2 = new ArrayList<Integer>();
+			for(int i=0;i<n;i++)
+				arr1.add(cin.nextInt());
+			Collections.sort(arr1);
+			for(int i:arr1){
+				if(!arr2.contains(i))
+					arr2.add(i);
+			}
+			System.out.println(arr2.size());
+			for(int i:arr2){
+				System.out.print(i+" ");
+			}
+			
+		}	
+	}
+}
