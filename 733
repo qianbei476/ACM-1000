@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static int[] GetArr(int[] arr,int x){
+		arr[0] = x%10;
+		arr[1] = x/10%10;
+		arr[2] = x/100%10;
+		arr[3] = x/1000%10;
+		arr[4] = x/10000%10;
+		arr[5] = x/100000;
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int T = cin.nextInt();
+		int[] arr;
+		while(T-->0){
+			arr = new int[6];
+			int x = cin.nextInt();
+			int y = cin.nextInt();
+			for(int i=x;i<=y;i++){
+				boolean IsOk = true;
+				arr = GetArr(arr, i);	
+				for(int j=0;j<6;j++){
+					if(arr[j]>6)
+					IsOk = false;
+				}
+				for(int k=0;k<4;k++){
+					if(arr[k]==arr[k+1]&&arr[k]==arr[k+2]){
+						IsOk = false;
+					}
+					
+				}
+				for(int z=0;z<5;z++){
+					if(Math.abs(arr[z]-arr[z+1])>4)
+						IsOk = false;
+				}
+				if(IsOk){
+					for(int l=0;l<6;l++)
+						System.out.print(arr[5-l]);
+					System.out.println("");
+				}
+			}
+		}
+	}
+}
