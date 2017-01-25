@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		int a[] = new int[2000001];
+		a[1] = 0;
+		a[0] = 0;
+		for(int i=2;i<2000001;i++){
+			a[i] = i;
+			
+		}
+		for(int i=2;i<2000001;i++){
+				if(a[i]!=0&&2*i<2000001)
+				for(int j=2*i;j<2000001;j+=i)
+					a[j] = 0;
+		}
+		while(cin.hasNext()){
+			int n = cin.nextInt();
+			if(n!=0)
+			for(int i=2;i<=n;i++){
+				if(a[i]!=0)
+					System.out.print(a[i]+" ");
+			}
+			else{
+				break;
+			}
+		}
+	}
+}
+//筛选法求素数
