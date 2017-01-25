@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(System.in);
+		
+		while(cin.hasNext()){
+			String str = cin.next();
+			char[] cc = str.toCharArray();
+			int k = cin.nextInt();
+			for(int j=0;j<cc.length;j++){
+				for(int i=0;i<26;i++){
+					if(cc[j]==((i*k)%26+'A')){
+						cc[j] = (char)('A'+i);
+						break;
+					}
+				}
+			}
+			System.out.println(String.valueOf(cc));
+		}
+	}
+}
