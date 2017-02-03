@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static int GetF(int x){
+		if(x==2)
+			return 3;
+		else if(x==3)
+			return 5;
+		else{
+			return GetF(x-1)+GetF(x-2); 
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner cin = new Scanner(new BufferedInputStream(System.in));
+		int n = cin.nextInt();
+		while(n-->0){
+			int M = cin.nextInt();
+			System.out.println(GetF(M));
+		}
+	}
+}
