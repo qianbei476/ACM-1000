@@ -1,0 +1,54 @@
+services:
+  redis-master:
+    image: redis:5.0.14
+    container_name: redis-master
+    network_mode: host
+    command: redis-server --appendonly yes --bind 0.0.0.0 --protected-mode no --port 6379
+    volumes:
+      - /opt/redis-cluster/master/data:/data
+    restart: always
+
+  redis-slave1:
+    image: redis:5.0.14
+    container_name: redis-slave1
+    network_mode: host
+    command: redis-server --appendonly yes --bind 0.0.0.0 --protected-mode no --port 6380 --slaveof 127.0.0.1 6379
+    volumes:
+      - /opt/redis-cluster/slave1/data:/data
+    restart: always
+
+  redis-slave2:
+    image: redis:5.0.14
+    container_name: redis-slave2
+    network_mode: host
+    command: redis-server --appendonly yes --bind 0.0.0.0 --protected-mode no --port 6381 --slaveof 127.0.0.1 6379
+    volumes:
+      - /opt/redis-cluster/slave2/data:/data
+    restart: always
+
+  redis-sentinel1:
+    image: redis:5.0.14
+    container_name: redis-sentinel1
+    network_mode: host
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - /opt/redis-cluster/sentinel1/sentinel.conf:/etc/redis/sentinel.conf
+    restart: always
+
+  redis-sentinel2:
+    image: redis:5.0.14
+    container_name: redis-sentinel2
+    network_mode: host
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - /opt/redis-cluster/sentinel2/sentinel.conf:/etc/redis/sentinel.conf
+    restart: always
+
+  redis-sentinel3:
+    image: redis:5.0.14
+    container_name: redis-sentinel3
+    network_mode: host
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - /opt/redis-cluster/sentinel3/sentinel.conf:/etc/redis/sentinel.conf
+    restart: always
